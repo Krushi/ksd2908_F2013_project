@@ -1,4 +1,5 @@
 Project2::Application.configure do
+  
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -18,6 +19,17 @@ Project2::Application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    :address        => "smtp.gmail.com",
+    :port           => 587,
+    :domain         => "domain.of.sender.net",
+    :authentication => "plain",
+    :user_name      => "krushidesai@gmail.com",
+    :password       => "ss11190kd",
+    :enable_starttls_auto => true
+  }
   config.active_support.deprecation = :log
 
   # Only use best-standards-support built into browsers
